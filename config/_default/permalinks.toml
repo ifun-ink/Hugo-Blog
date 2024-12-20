@@ -7,10 +7,9 @@
 documentation = ":sections[0:]/:slugorfilename"
 guides = "guides/:slugorfilename"
 
-
-  [page]
+[page]
     posts = '/articles/:year/:month/:slug/'
     tutorials = '/training/:slug/'
-  [section]
+[section]
     posts = '/articles/'
     tutorials = '/training/'
