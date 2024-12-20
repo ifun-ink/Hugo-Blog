@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>修改时区 - </title><meta name="author" content="">
+<meta name="description" content="修改服务器时区为 Asia/Shanghai 本文演示如何将服务器的时区设置为 Asia/Shanghai。
+"><meta name="keywords" content='Linux, 时区'>
+  <meta itemprop="name" content="修改时区">
+  <meta itemprop="description" content="修改服务器时区为 Asia/Shanghai 本文演示如何将服务器的时区设置为 Asia/Shanghai。">
+  <meta itemprop="datePublished" content="2024-03-07T15:37:59+08:00">
+  <meta itemprop="dateModified" content="2024-03-07T15:37:59+08:00">
+  <meta itemprop="wordCount" content="123">
+  <meta itemprop="keywords" content="Linux,时区"><meta property="og:url" content="http://localhost:1313/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/">
+  <meta property="og:title" content="修改时区">
+  <meta property="og:description" content="修改服务器时区为 Asia/Shanghai 本文演示如何将服务器的时区设置为 Asia/Shanghai。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-07T15:37:59+08:00">
+    <meta property="article:modified_time" content="2024-03-07T15:37:59+08:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="时区">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="修改时区">
+  <meta name="twitter:description" content="修改服务器时区为 Asia/Shanghai 本文演示如何将服务器的时区设置为 Asia/Shanghai。">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/" title="修改时区 - " /><link rel="next" type="text/html" href="http://localhost:1313/articles/%E9%85%8D%E7%BD%AE-fixit/" title="配置 FixIt" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/index.md" title="修改时区 - "><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "修改时区",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/articles\/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA\/"
+    },"genre": "posts","keywords": "Linux, 时区","wordcount":  123 ,
+    "url": "http:\/\/localhost:1313\/articles\/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA\/","datePublished": "2024-03-07T15:37:59+08:00","dateModified": "2024-03-07T15:37:59+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "作者"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title=""><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/showcase/"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 案例展示</a></li><li class="menu-item">
+              <a class="menu-link" href="/community/"><i class="fa-regular fa-comments fa-fw fa-sm" aria-hidden="true"></i> 社区支持</a></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);">documentation</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="https://github.com/hugo-fixit/FixIt/releases" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-code-branch fa-fw fa-sm" aria-hidden="true"></i> 版本发布 <i class="fa-solid fa-external-link-alt fa-fw fa-xs text-secondary"></i></a>
+                      </li><li class="menu-item-divider" aria-hidden="true"></li><li class="menu-item">
+                        <a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title=""><span class="header-title-text"></span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/showcase/"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 案例展示</a></li><li class="menu-item"><a class="menu-link" href="/community/"><i class="fa-regular fa-comments fa-fw fa-sm" aria-hidden="true"></i> 社区支持</a></li><li class="menu-item text-center"><a class="menu-link" href="https://github.com/hugo-fixit/FixIt" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fa-brands fa-github fa-fw' aria-hidden='true'></i> </a></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);">documentation</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="https://github.com/hugo-fixit/FixIt/releases"rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-code-branch fa-fw fa-sm" aria-hidden="true"></i> 版本发布 <i class="fa-solid fa-external-link-alt fa-fw fa-xs text-secondary"></i></a>
+                      </li><li class="menu-item menu-item-divider" aria-hidden="true"></li><li class="menu-item">
+                        <a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>修改时区</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" class="post-category" title="分类 - 系统管理"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 系统管理</a> 和 <a href="/collections/linux%E5%9F%BA%E7%A1%80/" class="post-collection" title="合集 - Linux基础"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Linux基础</a></span></div><div class="post-meta-line"><span title="发布于 2024-03-07 15:37:59"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-03-07">2024-03-07</time></span>&nbsp;<span title="123 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#修改服务器时区为-asiashanghai">修改服务器时区为 Asia/Shanghai</a>
+          <ul>
+            <li><a href="#1-查看当前系统时间和时区">1. 查看当前系统时间和时区</a></li>
+            <li><a href="#2-设置时区为-asiashanghai">2. 设置时区为 Asia/Shanghai</a></li>
+            <li><a href="#3-验证时区修改结果">3. 验证时区修改结果</a></li>
+          </ul>
+        </li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h3 id="修改服务器时区为-asiashanghai" class="heading-element"><span>修改服务器时区为 Asia/Shanghai</span>
+  <a href="#%e4%bf%ae%e6%94%b9%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%97%b6%e5%8c%ba%e4%b8%ba-asiashanghai" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>本文演示如何将服务器的时区设置为 <code>Asia/Shanghai</code>。</p>
+<hr>
+<h4 id="1-查看当前系统时间和时区" class="heading-element"><span>1. 查看当前系统时间和时区</span>
+  <a href="#1-%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8d%e7%b3%bb%e7%bb%9f%e6%97%b6%e9%97%b4%e5%92%8c%e6%97%b6%e5%8c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>使用 <code>timedatectl</code> 命令查看当前系统的时间和时区信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vzsu@Debian:~$ timedatectl
+</span></span><span class="line"><span class="cl">               Local time: Wed 2023-03-08 07:22:59 UTC
+</span></span><span class="line"><span class="cl">           Universal time: Wed 2023-03-08 07:22:59 UTC
+</span></span><span class="line"><span class="cl">                 RTC time: Wed 2023-03-08 07:23:00
+</span></span><span class="line"><span class="cl">                Time zone: UTC <span class="o">(</span>UTC, +0000<span class="o">)</span>
+</span></span><span class="line"><span class="cl">System clock synchronized: yes
+</span></span><span class="line"><span class="cl">              NTP service: n/a
+</span></span><span class="line"><span class="cl">          RTC in <span class="nb">local</span> TZ: no</span></span></code></pre></td></tr></table>
+</div>
+</div><p>从输出可以看出，当前时区是 <code>UTC</code>。</p>
+<hr>
+<h4 id="2-设置时区为-asiashanghai" class="heading-element"><span>2. 设置时区为 Asia/Shanghai</span>
+  <a href="#2-%e8%ae%be%e7%bd%ae%e6%97%b6%e5%8c%ba%e4%b8%ba-asiashanghai" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>使用以下命令更改系统时区：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo timedatectl set-timezone Asia/Shanghai</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h4 id="3-验证时区修改结果" class="heading-element"><span>3. 验证时区修改结果</span>
+  <a href="#3-%e9%aa%8c%e8%af%81%e6%97%b6%e5%8c%ba%e4%bf%ae%e6%94%b9%e7%bb%93%e6%9e%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>再次使用 <code>timedatectl</code> 查看系统时区：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vnxi@Debian:~$ timedatectl
+</span></span><span class="line"><span class="cl">               Local time: Wed 2023-03-08 15:26:45 CST
+</span></span><span class="line"><span class="cl">           Universal time: Wed 2023-03-08 07:26:45 UTC
+</span></span><span class="line"><span class="cl">                 RTC time: Wed 2023-03-08 07:26:46
+</span></span><span class="line"><span class="cl">                Time zone: Asia/Shanghai <span class="o">(</span>CST, +0800<span class="o">)</span>
+</span></span><span class="line"><span class="cl">System clock synchronized: yes
+</span></span><span class="line"><span class="cl">              NTP service: n/a
+</span></span><span class="line"><span class="cl">          RTC in <span class="nb">local</span> TZ: no</span></span></code></pre></td></tr></table>
+</div>
+</div><p>从输出可以看到：</p>
+<ul>
+<li>时区已变更为 <code>Asia/Shanghai</code>，对应时间显示为 <code>CST, +0800</code>。</li>
+<li>系统时间已同步调整。</li>
+</ul>
+<hr>
+<h3 id="总结" class="heading-element"><span>总结</span>
+  <a href="#%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>通过 <code>timedatectl</code> 命令可以快速查看和修改系统时区。修改完成后，建议再次检查是否符合预期，以确保系统时间正常运行。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-03-07 15:37:59">更新于 2024-03-07&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 X" data-sharer="twitter" data-url="http://localhost:1313/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/" data-title="修改时区" data-hashtags="Linux,时区"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://localhost:1313/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/" data-hashtag="Linux"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://localhost:1313/articles/%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA/" data-title="修改时区"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/linux/" class="post-tag" title="标签 - Linux">Linux</a><a href="/tags/%E6%97%B6%E5%8C%BA/" class="post-tag" title="标签 - 时区">时区</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/articles/%E9%85%8D%E7%BD%AE-fixit/" class="post-nav-item" rel="next" title="配置 FixIt">配置 FixIt<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.140.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.17-036cbb41"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.17-036cbb41"};console.log('Page config:', window.config);</script><script src="/js/theme.min.js" defer></script></body>
+</html>

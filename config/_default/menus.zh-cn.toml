@@ -1,0 +1,40 @@
+# -------------------------------------------------------------------------------------
+# Menu Configuration | 菜单配置
+# See: https://fixit.lruihao.cn/zh-cn/documentation/basics/#menu-configuration
+# -------------------------------------------------------------------------------------
+
+
+[[main]]
+  identifier = "archives"
+  parent = "documentation"
+  name = "归档"
+  url = "archives/"
+  weight = 20
+  [main.params]
+    icon = "fa-solid fa-archive"
+    divided = true
+[[main]]
+  identifier = "categories"
+  parent = "documentation"
+  name = "分类"
+  url = "categories/"
+  weight = 21
+  [main.params]
+    icon = "fa-solid fa-folder-tree"
+[[main]]
+  identifier = "collections"
+  parent = "documentation"
+  name = "合集"
+  url = "collections/"
+  weight = 22
+  [main.params]
+    icon = "fa-solid fa-layer-group"
+[[main]]
+  identifier = "tags"
+  parent = "documentation"
+  name = "标签"
+  url = "tags/"
+  weight = 23
+  [main.params]
+    icon = "fa-solid fa-tags"
+

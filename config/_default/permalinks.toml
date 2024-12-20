@@ -1,0 +1,11 @@
+# -------------------------------------------------------------------------------------
+# Permalinks Configuration | Permalinks 配置
+# See: https://gohugo.io/content-management/urls/#permalinks
+# -------------------------------------------------------------------------------------
+
+
+
+ # 为 posts 设置的 URL 格式
+posts = '/articles/:slug/'
+# 为 tutorials 设置的 URL 格式
+tutorials = '/training/:slug/'
