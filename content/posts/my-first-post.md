@@ -1,9 +1,8 @@
 ---
-title: My First Post
+title: 第一篇文章
 subtitle:
 date: 2024-12-20T21:41:18+08:00
 slug: 583bc6c
-draft: true
 author:
   name:
   link:
