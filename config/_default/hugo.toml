@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 
-title = 'My New Hugo Site'
+title = '我的博客'
 theme = 'FixIt'
 defaultContentLanguage = 'zh-cn'
 

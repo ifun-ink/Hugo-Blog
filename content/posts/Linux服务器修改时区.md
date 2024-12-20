@@ -3,6 +3,13 @@ title: 修改时区
 subtitle:
 date: 2024-12-20T21:41:18+08:00
 slug: 583ddd
+tags:
+  - Linux
+  - 时区
+categories:
+  - 系统管理
+collections:
+  - Linux基础
 ---
 
 
