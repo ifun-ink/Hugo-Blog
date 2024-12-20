@@ -1,12 +1,12 @@
 # -------------------------------------------------------------------------------------
 # Menu Configuration | 菜单配置
-# See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
+# See: https://fixit.lruihao.cn/zh-cn/documentation/basics/#menu-configuration
 # -------------------------------------------------------------------------------------
 
 [[main]]
   identifier = "releases"
   parent = "documentation"
-  name = "Releases"
+  name = "版本发布"
   post = '<i class="fa-solid fa-external-link-alt fa-fw fa-xs text-secondary"></i>'
   url = "https://github.com/hugo-fixit/FixIt/releases"
   weight = 5
@@ -15,7 +15,7 @@
 [[main]]
   identifier = "archives"
   parent = "documentation"
-  name = "Archives"
+  name = "归档"
   url = "archives/"
   weight = 20
   [main.params]
@@ -24,7 +24,7 @@
 [[main]]
   identifier = "categories"
   parent = "documentation"
-  name = "Categories"
+  name = "分类"
   url = "categories/"
   weight = 21
   [main.params]
@@ -32,7 +32,7 @@
 [[main]]
   identifier = "collections"
   parent = "documentation"
-  name = "Collections"
+  name = "合集"
   url = "collections/"
   weight = 22
   [main.params]
@@ -40,7 +40,7 @@
 [[main]]
   identifier = "tags"
   parent = "documentation"
-  name = "Tags"
+  name = "标签"
   url = "tags/"
   weight = 23
   [main.params]
@@ -48,7 +48,7 @@
 
 [[main]]
   identifier = "showcase"
-  name = "Showcase"
+  name = "案例展示"
   url = "showcase/"
   weight = 31
   [main.params]
@@ -56,7 +56,7 @@
 
 [[main]]
   identifier = "community"
-  name = "Community"
+  name = "社区支持"
   url = "community/"
   weight = 40
   [main.params]
@@ -64,9 +64,9 @@
 
 [[main]]
   identifier = "tests"
-  name = "Tests"
+  name = "测试"
   url = "tests/"
-  title = "Tests for FixIt"
+  title = "FixIt 测试文章"
   weight = 90
   [main.params]
     draft = true

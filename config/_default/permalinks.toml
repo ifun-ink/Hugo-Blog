@@ -3,9 +3,14 @@
 # See: https://gohugo.io/content-management/urls/#permalinks
 # -------------------------------------------------------------------------------------
 
+# posts = ":year/:month/:filename"
+documentation = ":sections[0:]/:slugorfilename"
+guides = "guides/:slugorfilename"
 
 
- # 为 posts 设置的 URL 格式
-posts = '/articles/:slug/'
-# 为 tutorials 设置的 URL 格式
-tutorials = '/training/:slug/'
+  [page]
+    posts = '/articles/:year/:month/:slug/'
+    tutorials = '/training/:slug/'
+  [section]
+    posts = '/articles/'
+    tutorials = '/training/'
