@@ -40,7 +40,7 @@ disableThemeInject = false
 [author]
   name = "ifun"
   email = "1024@lruihao.cn"
-  link = "https://lruihao.cn"
+  link = "https://www.azfum.com"
   avatar = "/images/avatar.webp"
 
 # 应用图标配置
@@ -243,7 +243,7 @@ disableThemeInject = false
     # FixIt 0.2.17 | 新增 头像菜单链接的 identifier
     avatarMenu = ""
     # 主页显示的网站标题（支持 HTML 格式）
-    title = "网站标题1"
+    title = ""
     # 主页显示的网站副标题
     subtitle = "This is my new Hugo FixIt site"
     # 是否为副标题显示打字机动画
@@ -746,3 +746,27 @@ disableThemeInject = false
   invite = "https://t.zsxq.com/BQcpe" # 正常加入链接：https://t.zsxq.com/CE3GF
   promotion_coupon = "https://t.zsxq.com/BQcpe"
   renewal_coupon = ""
+
+
+
+# 主页的社交信息设置
+[social]
+  GitHub = "X"
+  Twitter = ""
+  Facebook = ""
+  Medium = ""
+  Gitlab = ""
+  Bilibili = ""
+  ORCID = ""
+  QQ = ""
+  QQGroup = "" # https://qun.qq.com/join.html
+  Email = ""
+  RSS = true
+  # 自定义社交链接如下
+  [FixItDemo]
+    id = "demo.fixit"
+    weight = 1000
+    Template = "https://%v.lruihao.cn/"
+    Title = "FixIt Demo"
+    [FixItDemo.icon]
+      Src = "images/icons/demo.svg"
