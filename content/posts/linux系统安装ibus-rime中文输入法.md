@@ -1,17 +1,14 @@
 ---
-title: rime
+title: linux系统安装ibus-rime中文输入法 
 subtitle:
-date: 2024-12-20T21:41:18+08:00
-slug: 5831dd
+date: 2024-10-13T21:41:18+08:00
+slug: r7rZCGbQ
 tags:
   - Linux
-  - 时区
+  - 输入法
 categories:
   - 系统管理
-collections:
-  - Linux基础
 ---
-
 
 官网：[https://rime.im/](https://rime.im/)
 

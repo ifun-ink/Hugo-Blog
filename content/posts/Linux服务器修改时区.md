@@ -1,8 +1,8 @@
 ---
-title: 修改时区
+title: Linux服务器修改时区 
 subtitle:
-date: 2024-12-20T21:41:18+08:00
-slug: 583ddd
+date: 2023-05-17T21:41:18+08:00
+slug: BXofQlvf
 tags:
   - Linux
   - 时区
@@ -11,7 +11,6 @@ categories:
 collections:
   - Linux基础
 ---
-
 
 ### 修改服务器时区为 Asia/Shanghai
 
