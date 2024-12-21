@@ -8,8 +8,8 @@ documentation = ":sections[0:]/:slugorfilename"
 guides = "guides/:slugorfilename"
 
 [page]
-    posts = '/articles/:slug'
-    tutorials = '/training/:slug'
+    posts = '/articles/:slug/'
+    tutorials = '/training/:slug/'
 #[section]
 #    posts = '/articles/'
 #    tutorials = '/training/'
