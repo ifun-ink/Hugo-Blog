@@ -31,7 +31,7 @@ titleDelimiter = "|"
 # 请记得通过 `params.header.subtitle.name` 设置网站副标题
 indexWithSubtitle = true
 # FixIt 0.3.13 | 新增 是否显示纯文本摘要
-summaryPlainify = true 
+summaryPlainify = false
 # FixIt 0.2.14 | 新增 默认情况下，FixIt 只会在主页的 HTML 头中注入主题元标记。
 # 您可以将其关闭，但如果您不这样做，我们将不胜感激，因为这是观察 FixIt 受欢迎程度上升的好方法。
 disableThemeInject = false
