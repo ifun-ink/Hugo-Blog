@@ -742,7 +742,7 @@ disableThemeInject = false
 
 # 主页的社交信息设置
 [social]
-  GitHub = "X"
+  GitHub = ""
   Twitter = ""
   Facebook = ""
   Medium = ""
