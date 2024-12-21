@@ -1,14 +1,36 @@
-baseURL = 'https://example.org/'
+# -------------------------------------------------------------------------------------
+# Hugo Configuration | Hugo 配置
+# See: https://gohugo.io/getting-started/configuration/
+# -------------------------------------------------------------------------------------
 
-title = '我的博客'
+# 网站标题
+title = "azfum"
+# 根目录的主机名（和路径）
+baseURL = "http://localhost:1313"
+#baseURL = 'https://example.org/'
 theme = 'FixIt'
 defaultContentLanguage = 'zh-cn'
+# 版权描述，仅仅用于 SEO
+copyright = ""
 
+# 是否使用 robots.txt
+enableRobotsTXT = true
 
-#[markup]
-#  _merge = "shallow"
-#[outputs]
-#  _merge = "shallow"
-#[taxonomies]
-#  _merge = "shallow"
+# 是否使用 emoji 代码
+enableEmoji = true
 
+# 时区
+timeZone = "Asia/Shanghai"
+
+# 创建新内容时使用的编辑器
+newContentEditor = "code"
+# 忽略一些构建错误
+ignoreLogs = [
+  "error-get-remote-image",
+  "error-get-remote-json",
+  "error-get-gh-repo",
+  "error-remote-getjson",
+  "error-missing-instagram-accesstoken",
+  "err-youtube-remote",
+  "warning-dev-version"
+]
