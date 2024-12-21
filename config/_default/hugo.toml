@@ -7,7 +7,6 @@
 title = "azfum"
 # 根目录的主机名（和路径）
 baseURL = "https://www.azfum.com"
-#baseURL = 'https://example.org/'
 theme = 'FixIt'
 defaultContentLanguage = 'zh-cn'
 # 版权描述，仅仅用于 SEO
