@@ -113,7 +113,8 @@ disableThemeInject = false
   # 页面头部导航栏标题配置
   [header.title]
     # LOGO 的 URL，默认为网站图标
-    logo = "/images/web-app-manifest-512x512.png"
+    #logo = "/images/web-app-manifest-512x512.png"
+    logo = ""
     # 标题名称，默认为网站标题
     name = ""
     # 你可以在名称 (允许 HTML 格式) 之前添加其他信息，例如图标
