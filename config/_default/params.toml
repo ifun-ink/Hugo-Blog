@@ -64,7 +64,7 @@ disableThemeInject = false
 [search]
   enable = true
   # 搜索引擎的类型 ["algolia", "fuse", "cse"]
-  type = "algolia"
+  type = "fuse"
   # 文章内容最长索引长度
   contentLength = 4000
   # 搜索框的占位提示语
@@ -472,7 +472,7 @@ disableThemeInject = false
   # FixIt 0.2.18 | 新增 是否开启即时页面
   instantPage = true
   # FixIt 0.3.0 | 新增 是否在侧边栏显示集合列表
-  collectionList = true
+  collectionList = false
   # FixIt 0.3.0 | 新增 是否在文章末尾显示集合导航
   collectionNavigation = true
   # FixIt 0.2.15 | 新增 转载配置
@@ -738,15 +738,6 @@ disableThemeInject = false
     [page.seo.publisher]
       name = "Lruihao"
       logoUrl = "/images/avatar.png"
-
-# FixIt Docs 配置
-[docs]
-  minHugoVersion = "0.134.1"
-[planet]
-  invite = "https://t.zsxq.com/BQcpe" # 正常加入链接：https://t.zsxq.com/CE3GF
-  promotion_coupon = "https://t.zsxq.com/BQcpe"
-  renewal_coupon = ""
-
 
 
 # 主页的社交信息设置
